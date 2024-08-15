@@ -1,0 +1,55 @@
+import numpy as np
+import pandas as pd
+
+# --- Part A: Aggregation Process for Single Dimensional Data ---
+print("Aggregation Process for Single Dimensional Data:\n")
+
+# Create a single-dimensional data (Series)
+single_dim_data = pd.Series([2, 4, 6, 8, 10, 12, 14])
+
+# Perform aggregation operations
+sum_single_dim = single_dim_data.sum()
+mean_single_dim = single_dim_data.mean()
+max_single_dim = single_dim_data.max()
+min_single_dim = single_dim_data.min()
+
+print("Sum:", sum_single_dim)
+print("Mean:", mean_single_dim)
+print("Max:", max_single_dim)
+print("Min:", min_single_dim)
+print("\n")
+
+# --- Part B: Aggregation Process for 2D Data ---
+print("Aggregation Process for 2D Data:\n")
+
+# Create a 2D data (DataFrame)
+two_dim_data = pd.DataFrame({
+    'A': [1, 2, 3, 4, 5],
+    'B': [10, 20, 30, 40, 50],
+    'C': [100, 200, 300, 400, 500]
+})
+
+# Perform aggregation operations along different axes
+sum_two_dim_rows = two_dim_data.sum(axis=1)  # Sum along rows
+sum_two_dim_columns = two_dim_data.sum(axis=0)  # Sum along columns
+
+print("Sum along rows:\n", sum_two_dim_rows)
+print("Sum along columns:\n", sum_two_dim_columns)
+print("\n")
+
+# --- Part C: Aggregation Process for n-Dimensional Data ---
+print("Aggregation Process for n-Dimensional Data:\n")
+
+# Create n-Dimensional data (3D array for this example)
+n_dim_data = np.random.randint(1, 100, size=(3, 4, 5))  # A 3x4x5 array
+
+# Perform aggregation operations across different axes
+sum_n_dim = np.sum(n_dim_data)  # Sum across all elements
+sum_n_dim_axis0 = np.sum(n_dim_data, axis=0)  # Sum along the first axis
+sum_n_dim_axis1 = np.sum(n_dim_data, axis=1)  # Sum along the second axis
+sum_n_dim_axis2 = np.sum(n_dim_data, axis=2)  # Sum along the third axis
+
+print("Sum across all elements:\n", sum_n_dim)
+print("\nSum along axis 0 (First axis):\n", sum_n_dim_axis0)
+print("\nSum along axis 1 (Second axis):\n", sum_n_dim_axis1)
+print("\nSum along axis 2 (Third axis):\n", sum_n_dim_axis2)
